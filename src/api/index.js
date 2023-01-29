@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/';
+const url = 'https://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/';
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);

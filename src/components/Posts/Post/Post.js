@@ -25,7 +25,7 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
       likes: post.likes + 1
     }
 
-    await fetch(`http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
+    await fetch(`https://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
       shares: post.shares + 1
     }
 
-    await fetch(`http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
+    await fetch(`https://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
