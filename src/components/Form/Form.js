@@ -27,7 +27,7 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
     if (postData.body.trim() === "") return
 
-    let response = await fetch('https://wisper-api-71822.herokuapp.com/post', {
+    let response = await fetch('http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

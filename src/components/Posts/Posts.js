@@ -12,7 +12,7 @@ const Posts = ({setCurrentId}) => {
     const [userPosts, setUserPosts] = useState() 
 
     const fetchData = async () => { 
-        var userPostsRes = await fetch("https://wisper-api-71822.herokuapp.com/user/1?withPosts=true");
+        var userPostsRes = await fetch("http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/user/1?withPosts=true");
         const userPostsJson = await userPostsRes.json();
         setUserPosts(userPostsJson);
         console.log(userPostsJson)

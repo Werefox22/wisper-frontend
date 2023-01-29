@@ -25,7 +25,7 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
       likes: post.likes + 1
     }
 
-    await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+    await fetch(`http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
       shares: post.shares + 1
     }
 
-    await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+    await fetch(`http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -55,7 +55,7 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
 
   // delete post
   const deletePost = async () => {
-    await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`, {
+    await fetch(`http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ const Post = ({ basePost, author, setCurrentId, refreshFeed }) => {
 
   // refresh the post
   const refresh = async () => {
-    let resPost = await fetch(`https://wisper-api-71822.herokuapp.com/post/${post.post_id}`)
+    let resPost = await fetch(`http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post/${post.post_id}`)
     let resPostJson = await resPost.json()
     // make sure the post wasn't deleted
     if (resPostJson) {
