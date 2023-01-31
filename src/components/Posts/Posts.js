@@ -5,6 +5,7 @@ import { Grid, CircularProgress } from '@material-ui/core';
 
 import Post from './Post/Post';
 import useStyles from './styles';
+import { url } from "../../api";
 
 const Posts = ({setCurrentId}) => {
 //    const posts = useSelector((state) => state.posts);
@@ -12,7 +13,7 @@ const Posts = ({setCurrentId}) => {
     const [userPosts, setUserPosts] = useState() 
 
     const fetchData = async () => { 
-        var userPostsRes = await fetch("https://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/user/1?withPosts=true");
+        var userPostsRes = await fetch(url + "/user/1?withPosts=true");
         const userPostsJson = await userPostsRes.json();
         setUserPosts(userPostsJson);
         console.log(userPostsJson)
