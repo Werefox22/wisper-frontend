@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
+import { url } from '../../api';
 
 import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
@@ -27,7 +28,7 @@ const Form = ({ currentId, setCurrentId }) => {
     e.preventDefault();
     if (postData.body.trim() === "") return
 
-    let response = await fetch('http://wisperapi-env.eba-cp34fknb.us-east-1.elasticbeanstalk.com/post', {
+    let response = await fetch(url + '/post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
