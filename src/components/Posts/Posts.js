@@ -14,6 +14,7 @@ const Posts = ({setCurrentId}) => {
 
     const fetchData = async () => { 
         var userPostsRes = await fetch(url + "/user/1?withPosts=true");
+        console.log(userPostsRes)
         const userPostsJson = await userPostsRes.json();
         setUserPosts(userPostsJson);
         console.log(userPostsJson)
